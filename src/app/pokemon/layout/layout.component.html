@@ -1,0 +1,22 @@
+<h1 class="mt-2">Pokemon App</h1>
+<ul class="nav nav-tabs">
+
+    <!--Tab Pokemon-->
+    <li class="nav-item" (click)="currentTab = 'tab-pokemon'">
+      <a class="nav-link"  [ngClass]="{'active': currentTab === 'tab-pokemon'}" href="#">Pokemons</a>
+    </li>
+       <!--Tab Favoritos-->
+    <li class="nav-item" (click)="currentTab = 'tab-favorites'">
+      <a class="nav-link" [ngClass]="{'active': currentTab === 'tab-favorites'}" href="#">Favoritos</a>
+    </li>
+    
+  </ul>
+
+  <div class="row mt-5">
+        <div class="card col-4" 
+        *ngFor="let pokemon of pokemons; let i = index">
+        <div class="card-body">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i + 1}}.png" class="card-img-top">
+            <p class="card-text">Pokemon</p>
+        </div>  
+  </div>
